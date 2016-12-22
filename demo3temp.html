@@ -1,0 +1,23 @@
+<div class="container-fluid">
+       <div class="row-fluid">
+       <div class="span2">
+        <br/> <!--Sidebar content-->
+       Search&nbsp;&nbsp;: <input ng-model="query" placeholder="请输入名字">
+        <br/></div><div class="radio">Sex : 
+       <label class="checkbox-inline"><input type="radio" name="sex"  ng-click="queryChange('boy')"> boy </label>
+       <label class="checkbox-inline"><input type="radio" name="sex"  ng-click="queryChange('girl')"> girl </label>
+       </div> <br/> 
+          <div class="span10">
+            <!--Body content-->
+       keyWord:{{query==""?"":query}} <br/> 
+           <br/>  <p>-----------------搜索结果-------------------</p>
+            <ul class="peson">
+               <li ng-repeat="peson in people | filter:query">
+                    {{peson.name}}
+                 <p>{{peson.sex}}</p>
+              </li>
+           </ul>
+           </div>
+         </div>
+         </div>
+</div>
